@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE scenario SYSTEM "sipp.dtd">
 
-<scenario name="UAS - Record-Route - Media">
-  <recv request="INVITE" crlf="true">
-   <action>
-      <ereg regexp=".*" search_in="hdr" header="Record-Route:" check_it="true" assign_to="1" />
-    </action>
-  </recv>
+<scenario name="UAS - Media">
+  <recv request="INVITE" crlf="true"></recv>
 
   <send>
     <![CDATA[
@@ -17,7 +13,6 @@
       [last_To:];tag=[call_number]
       [last_Call-ID:]
       [last_CSeq:]
-      Record-Route:[$1]
       Contact: <sip:[local_ip]:[local_port];transport=[transport]>
       Content-Length: 0
 
