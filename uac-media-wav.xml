@@ -75,7 +75,7 @@
 
   <nop>
     <action>
-        <exec play_pcap_audio="pcap/g711a.pcap,-1"/>
+        <exec play_pcap_audio="/root/sipp/wav/g711a.pcap,-1"/>
     </action>
   </nop>
   
