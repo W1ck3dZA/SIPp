@@ -7,7 +7,7 @@
 
       INVITE sip:27623182874@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=z9hG4bK-22506-[call_number]
-      From: <sip:[service]@[local_ip]:[local_port];user=phone>;tag=[call_number]
+      From: <sip:[field0]@[local_ip]:[local_port];user=phone>;tag=[call_number]
       To: <sip:27623182874@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
       CSeq: 1 INVITE
@@ -44,7 +44,7 @@
   <recv response="200" optional="true" next="1">
     <action>
         <ereg regexp="sip.105.29.91.50.50.." search_in="hdr" header="Contact:" assign_to="1" />
-        <log message="[service],200"/>
+        <log message="[field0],200"/>
     </action>
   </recv>
 
@@ -52,7 +52,7 @@
   <recv response="480">
     <action>
         <ereg regexp="<sip:27623182874@[^>]+>;tag=([^;]*)" search_in="hdr" header="To:" assign_to="4" />
-        <log message="[service],480"/>
+        <log message="[field0],480"/>
     </action>
   </recv>
 
@@ -61,7 +61,7 @@
     <![CDATA[
       ACK sip:27623182874@[remote_ip] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=z9hG4bK-22506-[call_number]
-      From: <sip:[service]@[local_ip]:[local_port];user=phone>;tag=[call_number]
+      From: <sip:[field0]@[local_ip]:[local_port];user=phone>;tag=[call_number]
       To: [$4]
       Call-ID: [call_id]
       CSeq: 1 ACK
@@ -81,7 +81,7 @@
     <![CDATA[
       ACK [$1] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=z9hG4bK-22506-[call_number]
-      From: <sip:[service]@[local_ip]:[local_port];user=phone>;tag=[call_number]
+      From: <sip:[field0]@[local_ip]:[local_port];user=phone>;tag=[call_number]
       To: <sip:27623182874@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 1 ACK
@@ -96,7 +96,7 @@
     <![CDATA[
       BYE [$1] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=z9hG4bK-22506-[call_number]
-      From: <sip:[service]@[local_ip]:[local_port];user=phone>;tag=[call_number]
+      From: <sip:[field0]@[local_ip]:[local_port];user=phone>;tag=[call_number]
       To: <sip:27623182874@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 2 BYE
